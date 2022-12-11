@@ -1,8 +1,8 @@
-// #include <iostream>
-// #include<stdio.h>
+// Nama : Ni Made Anandea Dias Putri Wadani
+// Nim : 220030363
+// Kelas : AB223
+
 #include<conio.h>
-// #include<stdlib.h>
-// #include<string.h>
 #include <bits/stdc++.h>
 
 using namespace std;
