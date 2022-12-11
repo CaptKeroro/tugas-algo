@@ -2,7 +2,6 @@
 // Nim : 220030363
 // Kelas : AB223
 
-#include<conio.h>
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -51,18 +50,18 @@ int main(){
 
   do{
     system("cls");
-    printf("+++ LINKED LIST +++\n");
-    printf("1. Input Data (Depan)\n");
-    printf("2. Input Data (Setelah)\n");
-    printf("3. Input Data (Akhir)\n");
-    printf("4. Hapus Data (Depan)\n");
-    printf("5. Hapus Data (Setelah)\n");
-    printf("6. Hapus Data (Akhir)\n");
-    printf("7. Tampilkan Data\n");
-    printf("8. Search Data\n");
-    printf("9. Exit\n");
+    cout << ("+++ LINKED LIST +++\n");
+    cout << ("1. Input Data (Depan)\n");
+    cout << ("2. Input Data (Setelah)\n");
+    cout << ("3. Input Data (Akhir)\n");
+    cout << ("4. Hapus Data (Depan)\n");
+    cout << ("5. Hapus Data (Setelah)\n");
+    cout << ("6. Hapus Data (Akhir)\n");
+    cout << ("7. Tampilkan Data\n");
+    cout << ("8. Search Data\n");
+    cout << ("9. Exit\n");
 
-    printf("Pilih Menu : ");
+    cout << ("Pilih Menu : ");
     scanf("%d", &menu);
 
     switch (menu){
@@ -108,17 +107,16 @@ int main(){
       break;
 
     case 9:
-      printf("Keluar Program!!");
+      cout << ("Keluar Program!!");
       break;
 
     default:
-      printf("Invalid Input!!");
+      cout << ("Invalid Input!!");
       break;
     }
-    printf("\n");
+    cout << ("\n");
 
-    printf("Press any key to continue…\n");
-    getch();
+    cout << ("Press any key to continue…\n");
 
   } while (menu != 9);
 
@@ -143,7 +141,7 @@ void addFirst(char nim[], char nama[], float ipk, List *L){
   }
 
   baru = NULL;
-  printf("\nBerhasil ditambahkan!");
+  cout << ("\nBerhasil ditambahkan!");
 }
 
 void addAfter(Elemen *prev, char nim[], char nama[], float ipk, List *L){
@@ -161,7 +159,7 @@ void addAfter(Elemen *prev, char nim[], char nama[], float ipk, List *L){
   }
 
   baru = NULL;
-  printf("\nBerhasil ditambahkan!");
+  cout << ("\nBerhasil ditambahkan!");
 }
 
 void addLast(char nim[], char nama[], float ipk, List *L){
@@ -183,7 +181,7 @@ void addLast(char nim[], char nama[], float ipk, List *L){
   }
 
   baru = NULL;
-  printf("\nBerhasil ditambahkan!");
+  cout << ("\nBerhasil ditambahkan!");
 }
 
 void deleteFirst(List *L){
@@ -192,7 +190,7 @@ void deleteFirst(List *L){
 
   free(data);
 
-  printf("\nBerhasil dihapus!");
+  cout << ("\nBerhasil dihapus!");
 }
 
 void deleteAfter(Elemen *prev, List *L){
@@ -205,7 +203,7 @@ void deleteAfter(Elemen *prev, List *L){
 
   free(data);
 
-  printf("\nBerhasil dihapus!");
+  cout << ("\nBerhasil dihapus!");
 }
 
 void deleteLast(List *L){
@@ -230,24 +228,24 @@ void deleteLast(List *L){
 
   free(data);
 
-  printf("\nBerhasil dihapus!");
+  cout << ("\nBerhasil dihapus!");
 }
 
 void showData(List *L)
 {
   Elemen *pnow = L->first;
   if (pnow == NULL){
-    printf("\nAnda belum menambahkan data!\n");
+    cout << ("\nAnda belum menambahkan data!\n");
   }
   else{
-    printf("\nIsi Data");
+    cout << ("\nIsi Data");
     int no = 0;
     while (pnow != NULL){
       no++;
-      printf("\n\nMahasiswa ke-%d", no);
-      printf("\nNIM : %s", pnow->mhs.nim);
-      printf("\nNama : %s", pnow->mhs.nama);
-      printf("\nIpk : %.2f", pnow->mhs.ipk);
+      cout << ("\n\nMahasiswa ke-%d", no);
+      cout << ("\nNIM : %s", pnow->mhs.nim);
+      cout << ("\nNama : %s", pnow->mhs.nama);
+      cout << ("\nIpk : %.2f", pnow->mhs.ipk);
       pnow = pnow->next;
     }
   }
@@ -258,7 +256,7 @@ Elemen *searchData(char nim[], List *L){
   Elemen *pnow = L->first;
   Elemen *result = NULL;
   if (pnow == NULL){
-    printf("\nAnda belum menambahkan data!\n");
+    cout << ("\nAnda belum menambahkan data!\n");
   }
   else
   {
@@ -275,10 +273,10 @@ Elemen *searchData(char nim[], List *L){
   }
 
   if (result == NULL){
-    printf("Data tidak ditemukan!");
+    cout << ("Data tidak ditemukan!");
   }
   else{
-    printf("Data ditemukan pada posisi ke-%d!", no);
+    cout << ("Data ditemukan pada posisi ke-%d!", no);
   }
 
   return result;
@@ -287,13 +285,13 @@ Elemen *searchData(char nim[], List *L){
 Mahasiswa inputMahasiswa(){
   Mahasiswa data;
 
-  printf("\nNIM : ");
+  cout << ("\nNIM : ");
   scanf("%s", &data.nim);
 
-  printf("Nama : ");
+  cout << ("Nama : ");
   scanf("%s", &data.nama);
 
-  printf("Ipk : ");
+  cout << ("Ipk : ");
   scanf("%f", &data.ipk);
 
   return data;
@@ -301,7 +299,7 @@ Mahasiswa inputMahasiswa(){
 
 char *searchNim(){
   Mahasiswa data;
-  printf("\nCari data (NIM) : ");
+  cout << ("\nCari data (NIM) : ");
   scanf("%s", &data.nim);
   return data.nim;
 }
